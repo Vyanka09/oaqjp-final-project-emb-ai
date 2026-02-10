@@ -13,6 +13,8 @@ def emotion_analyzer():
     joy_score = response['joy']
     sadness_score = response['sadness']
     dominant = response['dominant_emotion']
+    if dominant is None:
+        return "Invalid text! Please try again!."
     return f"""For the given statement, the system response is 'anger': {anger_score}, 'disgust': {disgust_score}, 'fear': 
     {fear_score}, 'joy': {joy_score} and 'sadness': {sadness_score}. The dominant emotion is {dominant}."""
 
